@@ -41,6 +41,7 @@
     --gold-400: #e9aa52;
     --red-500: #f15d51;
     --font-40-56-768-1280: clamp(2.5rem, 1rem + 3.125vw, 3.5rem);
+    --space-24-32-768-1280: clamp(1.5rem, 0.75rem + 1.5625vw, 2rem);
   }
 
   body {
@@ -72,9 +73,25 @@
     color: var(--grey-300);
     font-size: 0.9375rem;
   }
+  main {
+    display: contents;
+
+    @media (min-width: 1280px) {
+      display: grid;
+      grid-template-columns: 730px 350px;
+      gap: 32px;
+    }
+  }
 }
 
 @layer components {
+  .container {
+    max-inline-size: 1112px;
+    display: grid;
+    gap: 64px;
+    place-items: center;
+    container-type: inline-size;
+  }
   .anchor-button {
     display: block;
     font-family: inherit;
@@ -99,13 +116,27 @@
   }
 
   .main-article {
-    display: grid;
-    row-gap: 1.5rem;
-
     & img {
-      max-block-size: 300px;
       inline-size: 100%;
       object-fit: cover;
+    }
+    & .article-content {
+      margin-block-start: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-24-32-768-1280);
+      & > * {
+        flex: 1;
+        min-width: 300px;
+      }
+    }
+    & .article-cta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-24-32-768-1280);
     }
   }
 
@@ -143,5 +174,41 @@
         }
       }
     }
+  }
+
+  .popular-articles {
+    & ol {
+      display: flex;
+      flex-direction: column;
+      li {
+        min-width: 300px;
+        display: flex;
+        gap: 1.5rem;
+      }
+    }
+    & img {
+      max-inline-size: 100px;
+      object-fit: cover;
+      height: 100%;
+    }
+    @container (min-width : 1028px) {
+      flex-direction: row;
+    }
+  }
+  .article-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 }
