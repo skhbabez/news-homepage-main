@@ -1,0 +1,62 @@
+@layer reset, default, components, utilities;
+
+@layer reset {
+  *,
+  ::before,
+  ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  img {
+    display: block;
+    max-inline-size: 100%;
+  }
+}
+
+@layer default {
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    src: local("Inter"),
+      url("assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  }
+
+  :root {
+    --font-base: "Inter", "sans-serif";
+    --white: #ffffff;
+    --black: #000000;
+    --grey-300: #c5c6ce;
+    --grey-200: #d8d8d8;
+    --navy-950: #00001a;
+    --navy-600: #5e607a;
+    --gold-400: #e9aa52;
+    --red-500: #f15d51;
+    --font-40-56-768-1280: clamp(2.5rem, 1rem + 3.125vw, 3.5rem);
+  }
+
+  body {
+    font-family: var(--font-base);
+    font-size: 0.9375rem;
+    line-height: calc(26 / 15);
+  }
+
+  h1 {
+    font-size: var(--font-40-56-768-1280);
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+    line-height: calc(24 / 18);
+  }
+
+  h1,
+  h3 {
+    font-weight: 800;
+  }
+}
