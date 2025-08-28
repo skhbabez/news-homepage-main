@@ -185,14 +185,14 @@
         display: flex;
         gap: 1.5rem;
       }
-    }
-    & img {
-      max-inline-size: 100px;
-      object-fit: cover;
-      height: 100%;
-    }
-    @container (min-width : 1028px) {
-      flex-direction: row;
+      @container (min-width : 1028px) {
+        flex-direction: row;
+      }
+      & img {
+        max-inline-size: 100px;
+        object-fit: cover;
+        height: 100%;
+      }
     }
   }
   .article-content {
