@@ -23,15 +23,40 @@
         <a>
           <img src="assets/images/logo.svg" alt="W. Home" />
         </a>
-        <nav aria-label="main navigation">
-          <menu>
-            <li><a>Home</a></li>
-            <li><a>New</a></li>
-            <li><a>Popular</a></li>
-            <li><a>Trending</a></li>
-            <li><a>Categories</a></li>
-          </menu>
-          <button type="button" aria-label="open menu"></button>
+
+        <nav
+          class="main-navigation"
+          aria-label="main navigation"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-closed="true"
+        >
+          <div class="menu-dialog">
+            <button
+              id="close-button"
+              type="button"
+              aria-label="close menu"
+              aria-controls="nav-menu"
+            >
+              <img src="assets/images/icon-menu-close.svg" alt="" />
+            </button>
+            <menu id="nav-menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">New</a></li>
+              <li><a href="#">Popular</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Categories</a></li>
+            </menu>
+          </div>
+          <button
+            id="open-button"
+            type="button"
+            aria-label="open menu"
+            aria-haspopup="true"
+            aria-controls="nav-menu"
+          >
+            <img src="assets/images/icon-menu.svg" alt="" />
+          </button>
         </nav>
       </header>
       <main>
@@ -94,24 +119,21 @@
             <li>
               <img src="assets/images/image-retro-pcs.jpg" alt="" />
               <div class="article-content">
-                <span> 01 </span>
-                <h3><a>Reviving Retro PCs</a></h3>
+                <h3><a href="#">Reviving Retro PCs</a></h3>
                 <p>What happens when old PCs are given modern upgrades?</p>
               </div>
             </li>
             <li>
               <img src="assets/images/image-top-laptops.jpg" alt="" />
               <div class="article-content">
-                <span> 02 </span>
-                <h3><a>Top 10 Laptops of 2022</a></h3>
+                <h3><a href="#">Top 10 Laptops of 2022</a></h3>
                 <p>Our best picks for various needs and budgets.</p>
               </div>
             </li>
             <li>
               <img src="assets/images/image-gaming-growth.jpg" alt="" />
               <div class="article-content">
-                <span>03</span>
-                <h3><a>The Growth of Gaming </a></h3>
+                <h3><a href="#">The Growth of Gaming </a></h3>
                 <p>How the pandemic has sparked fresh opportunities.</p>
               </div>
             </li>
