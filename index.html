@@ -16,6 +16,7 @@
     />
     <title>News homepage | Frontend Mentor</title>
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="main.js"></script>
   </head>
   <body>
     <div class="container">
@@ -23,41 +24,50 @@
         <a>
           <img src="assets/images/logo.svg" alt="W. Home" />
         </a>
+        <div aria-live="assertive" aria-atomic="true">
+          <nav
+            class="main-navigation-mobile"
+            id="main-navigation"
+            aria-label="main navigation"
+          >
+            <dialog >
+              <button
+                id="close-button"
+                type="button"
+                aria-label="close menu"
+                aria-controls="nav-menu"
+              >
+                <img src="assets/images/icon-menu-close.svg" alt="" />
+              </button>
+              <menu id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">Categories</a></li>
+              </menu>
+            </dialog>
 
-        <nav
-          class="main-navigation"
-          aria-label="main navigation"
-          aria-live="assertive"
-          aria-atomic="true"
-          data-closed="true"
-        >
-          <div class="menu-dialog">
             <button
-              id="close-button"
+              id="open-button"
               type="button"
-              aria-label="close menu"
+              aria-label="open menu"
+              aria-haspopup="true"
               aria-controls="nav-menu"
             >
-              <img src="assets/images/icon-menu-close.svg" alt="" />
+              <img src="assets/images/icon-menu.svg" alt="" />
             </button>
-            <menu id="nav-menu">
+          </nav>
+          <nav class="main-navigation" aria-label="main navigation">
+            <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">New</a></li>
               <li><a href="#">Popular</a></li>
               <li><a href="#">Trending</a></li>
               <li><a href="#">Categories</a></li>
-            </menu>
-          </div>
-          <button
-            id="open-button"
-            type="button"
-            aria-label="open menu"
-            aria-haspopup="true"
-            aria-controls="nav-menu"
-          >
-            <img src="assets/images/icon-menu.svg" alt="" />
-          </button>
-        </nav>
+            </ul>
+          </nav>
+        </div>
       </header>
       <main>
         <article class="main-article">

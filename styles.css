@@ -46,7 +46,6 @@
     --font-15: 0.9375rem;
     --font-18: 1.125rem;
     --font-20: 1.25rem;
-
     --font-32: 2rem;
     --space-24-32-768-1280: clamp(1.5rem, 0.75rem + 1.5625vw, 2rem);
     --space-21_5-32_5-375-768: clamp(1.3438rem, 0.6877rem + 2.799vw, 2.0313rem);
@@ -93,10 +92,9 @@
 
   main {
     display: contents;
-
-    @media (min-width: 1280px) {
+    @container (min-width: 1024px) {
       display: grid;
-      grid-template-columns: 730px 350px;
+      grid-template-columns: 65.647% 1fr;
       gap: var(--space-32);
     }
   }
@@ -171,7 +169,6 @@
   .article-card {
     background-color: var(--navy-950);
     padding: var(--space-21_5-32_5-375-768) var(--space-24);
-    /* inline-size: 100%; */
     & h2 {
       color: var(--gold-400);
       line-height: var(--space-32);
@@ -248,60 +245,68 @@
     }
   }
   .main-navigation {
-    & menu {
+    display: none;
+    @container (min-width: 1024px) {
+      display: block;
+    }
+    & ul {
       display: flex;
       gap: var(--space-40);
       list-style: none;
-      color: var(--navy-600);
-      & li {
-        transition: all 150ms ease-in-out;
-        &:hover {
-          color: var(--red-500);
-        }
-      }
     }
+  }
+
+  .main-navigation-mobile {
     & button {
-      display: none;
       background-color: inherit;
       border: none;
       &:is(:focus, :focus-visible) {
         outline: 1px solid var(--navy-950);
       }
     }
+    #close-button {
+      display: block;
+      margin-inline-start: auto;
+    }
 
-    @media (max-width: 1024px) {
-      &[data-closed="false"] {
-        & .menu-dialog {
-          display: block;
-        }
-        #open-button {
-          display: none;
-        }
-      }
-      button {
-        display: block;
-      }
-      & .menu-dialog {
-        display: none;
-        min-inline-size: 256px;
-        inline-size: 40.625dvw;
-        min-block-size: 100dvh;
-        position: fixed;
-        right: 0px;
-        top: 0px;
-        padding-block: 27px;
-        padding-inline-start: calc(0.4179rem + 3.8168vw);
-        padding-inline-end: calc(-2.2061rem + 15.0127vw);
+    & dialog {
+      /* https://stackoverflow.com/questions/76078886/why-does-css-positionfixed-not-work-for-the-dialog-tag */
+      border: none;
+      min-inline-size: 256px;
+      inline-size: 40.625dvw;
+      min-block-size: 100dvh;
+      position: fixed;
+      right: 0%;
+      top: 0px;
+      margin: unset;
+      inset-inline-start: unset;
+      padding-block: 27px;
+      padding-inline-start: calc(0.4179rem + 3.8168vw);
+      padding-inline-end: calc(-2.2061rem + 15.0127vw);
 
-        background-color: var(--white);
-        & button {
-          margin-left: auto;
-        }
+      background-color: var(--white);
+      & button {
+        margin-left: auto;
       }
-      & menu {
-        flex-direction: column;
-        gap: var(--space-24);
-        margin-block-start: 88px;
+    }
+    & menu {
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+      gap: var(--space-24);
+      margin-block-start: 88px;
+    }
+    @container (min-width: 1024px) {
+      display: none;
+    }
+  }
+  .main-navigation,
+  .main-navigation-mobile {
+    color: var(--navy-600);
+    & li {
+      transition: all 150ms ease-in-out;
+      &:hover {
+        color: var(--red-500);
       }
     }
   }
