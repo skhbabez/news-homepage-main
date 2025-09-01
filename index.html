@@ -24,35 +24,16 @@
         <a href="#">
           <img src="assets/images/logo.svg" alt="W. Home" />
         </a>
-        <div aria-live="assertive" aria-atomic="true">
-          <nav
-            class="main-navigation-mobile"
-            id="main-navigation"
-            aria-label="main navigation"
-          >
-            <dialog>
-              <button id="close-button" type="button" aria-label="close menu">
-                <img src="assets/images/icon-menu-close.svg" alt="" />
-              </button>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">New</a></li>
-                <li><a href="#">Popular</a></li>
-                <li><a href="#">Trending</a></li>
-                <li><a href="#">Categories</a></li>
-              </ul>
-            </dialog>
 
-            <button
-              id="open-button"
-              type="button"
-              aria-label="open menu"
-              aria-haspopup="dialog"
-            >
-              <img src="assets/images/icon-menu.svg" alt="" />
+        <nav
+          class="main-navigation-mobile"
+          id="main-navigation"
+          aria-label="main navigation"
+        >
+          <dialog aria-label="open nav menu">
+            <button id="close-button" type="button" aria-label="close menu">
+              <img src="assets/images/icon-menu-close.svg" alt="" />
             </button>
-          </nav>
-          <nav class="main-navigation" aria-label="main navigation">
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">New</a></li>
@@ -60,8 +41,26 @@
               <li><a href="#">Trending</a></li>
               <li><a href="#">Categories</a></li>
             </ul>
-          </nav>
-        </div>
+          </dialog>
+
+          <button
+            id="open-button"
+            type="button"
+            aria-label="open menu"
+            aria-haspopup="dialog"
+          >
+            <img src="assets/images/icon-menu.svg" alt="" />
+          </button>
+        </nav>
+        <nav class="main-navigation" aria-label="main navigation">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Trending</a></li>
+            <li><a href="#">Categories</a></li>
+          </ul>
+        </nav>
       </header>
       <main>
         <article class="main-article">
