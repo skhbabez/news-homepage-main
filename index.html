@@ -31,29 +31,23 @@
             aria-label="main navigation"
           >
             <dialog>
-              <button
-                id="close-button"
-                type="button"
-                aria-label="close menu"
-                aria-controls="nav-menu"
-              >
+              <button id="close-button" type="button" aria-label="close menu">
                 <img src="assets/images/icon-menu-close.svg" alt="" />
               </button>
-              <menu id="nav-menu">
+              <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">New</a></li>
                 <li><a href="#">Popular</a></li>
                 <li><a href="#">Trending</a></li>
                 <li><a href="#">Categories</a></li>
-              </menu>
+              </ul>
             </dialog>
 
             <button
               id="open-button"
               type="button"
               aria-label="open menu"
-              aria-haspopup="true"
-              aria-controls="nav-menu"
+              aria-haspopup="dialog"
             >
               <img src="assets/images/icon-menu.svg" alt="" />
             </button>

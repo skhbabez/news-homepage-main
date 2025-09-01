@@ -67,6 +67,7 @@
     font-size: var(--font-15);
     block-size: 100dvh;
     padding-inline: var(--space-16-80-375-768);
+    background-color: --;
   }
 
   h1 {
@@ -113,9 +114,9 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-64);
-
     container-type: inline-size;
     margin-inline: auto;
+
     margin-block-start: var(--space-28-89-768-1280);
   }
   .anchor-button {
@@ -127,7 +128,7 @@
     font-weight: 700;
     text-transform: uppercase;
     color: var(--navy-950);
-    background-color: #f15d51;
+    background-color: var(--red-500);
     padding: var(--space-12) var(--space-32);
     max-inline-size: fit-content;
     transition: all 150ms ease-in-out;
@@ -264,10 +265,6 @@
         outline: 1px solid var(--navy-950);
       }
     }
-    #close-button {
-      display: block;
-      margin-inline-start: auto;
-    }
 
     & dialog {
       /* https://stackoverflow.com/questions/76078886/why-does-css-positionfixed-not-work-for-the-dialog-tag */
@@ -286,14 +283,15 @@
 
       background-color: var(--white);
       & button {
-        margin-left: auto;
+        display: block;
+        margin-inline-start: auto;
       }
       &::backdrop {
         background-color: var(--navy-950);
         opacity: 50%;
       }
     }
-    & menu {
+    & ul {
       display: flex;
       list-style: none;
       flex-direction: column;

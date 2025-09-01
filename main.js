@@ -6,5 +6,5 @@ closeButton.addEventListener("click", () => {
   dialog.close();
 });
 openButton.addEventListener("click", () => {
-  dialog.showModal(true);
+  dialog.showModal();
 });
