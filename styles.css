@@ -288,6 +288,10 @@
       & button {
         margin-left: auto;
       }
+      &::backdrop {
+        background-color: var(--navy-950);
+        opacity: 50%;
+      }
     }
     & menu {
       display: flex;
